@@ -46,7 +46,8 @@
 		boton.addEventListener('click', () => {
 			let comentario = document.getElementById("comentario").value;
 			let boton = document.getElementById("boton");
-			alert(comentario);
+			let valorResultado = 0;
+			// alert(comentario);
 
 			let radioDOM = document.querySelectorAll(".algo");
 			let estrellas = document.getElementsByName("estrellas");
@@ -54,14 +55,16 @@
 
 			for (let radio of radioDOM) {
 				if (radio.checked) {
-					let valorResultado = radio.value;
+					valorResultado = radio.value;
 				}
 			}
 
 			let contenido = document.getElementById("contenido");
 			contenido.innerHTML = `
 
-				
+				<br>
+				<img src="./estrella-${valorResultado}.png">
+				<p>${comentario}</p>
 			
 			`
 		});
